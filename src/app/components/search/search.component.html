@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col">
+    <input type="text" name="search" class="form-control" autocomplete="off" id="search" #termino (keyup)="onKeyPress(termino.value)"
+      placeholder="Buscar ...." />
+  </div>
+
+  <!-- <div class="card-columns" style="margin-top: 30px;">
+    <div class="card" *ngFor="let item of resultSearch">
+      <img [src]="item.images | notimage" class="card-img-top" [alt]="item.name">
+      <div class="card-body">
+        <h5 class="card-title">{{item.name}}</h5>
+      </div>
+    </div>
+  </div> -->
+  <app-tarjeta-artista [items]="resultSearch"></app-tarjeta-artista>
+</div>
+<div class="row" *ngIf="loading">
+  <div class="col">
+    <app-loading></app-loading>
+  </div>
+</div>
